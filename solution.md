@@ -15,3 +15,7 @@ Part 2
 - 66765 relaciones de tipo `ROUTE_TO`
 -  7106 relaciones de tipo `IN`
 -  6162 relaciones de tipo `INCORPORATED_INTO`
+```neo4j
+MATCH (airline:Airline)
+RETURN count(airline)
+```
