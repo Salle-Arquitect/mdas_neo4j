@@ -125,3 +125,10 @@ RETURN airport.name
 MATCH (:City { name: "Barcelona" } ) <-[:MAIN_CITY]- (:Airport) -[r:ROUTE_TO]-> (:Airport) -[:MAIN_CITY]-> (:City { name: "London" } )
 RETURN r.airlineId
 ```
+
+# 6) Desde Santa Clara, ¿a cuantas ciudades puedo ir haciendo 1 escala (= dos rutas)?
+```neo4j
+MATCH (:City {name: "Santa Clara"} ) <-[:MAIN_CITY]- (:Airport) -[:ROUTE_TO*2]-> (:Airport) -[:MAIN_CITY]-> (c:City)
+RETURN count(c)
+```
+Total de 1827 ciudades distintas haciendo 1 escala.
