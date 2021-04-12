@@ -115,6 +115,6 @@ el resultado es correcto
 
 # 3) Muestra los nombres de los aeropuertos que hay en London
 ```neo4j
-MATCH (a:Airport) -[:MAIN_CITY]-> (:City { name: "London" })
-RETURN a.name
+MATCH (airport:Airport) -[:MAIN_CITY]-> (:City { name: "London" })
+RETURN airport.name
 ```
