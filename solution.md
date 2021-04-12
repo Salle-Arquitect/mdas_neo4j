@@ -52,19 +52,36 @@ CREATE (airline) -[:INCORPORATED_INTO]-> (country)
 
 
 # Part 2
--  7697 relaciones de tipo `MAIN_CITY`
--  7106 relaciones de tipo `IN`
--  6162 relaciones de tipo `INCORPORATED_INTO`
-- 6956 nodos de tipo City
--  317 nodos de tipo Country
-- 6162 nodos de tipo Airline
-
 ## count `ROUTE_TO`
 ```neo4j
 MATCH ()-[r:ROUTE_TO]->()
 RETURN count(r) as count
 ```
 66765,
+el resultado es correcto
+
+## Count `MAIN_CITY`
+```neo4j
+MATCH ()-[r:MAIN_CITY]->()
+RETURN count(r) as count
+```
+7697,
+el resultado es correcto
+
+## count `IN`
+```neo4j
+MATCH ()-[r:IN]->()
+RETURN count(r) as count
+```
+7106,
+el resultado es correcto
+
+## count `INCORPORATED_INTO`
+```neo4j
+MATCH ()-[r:INCORPORATED_INTO]->()
+RETURN count(r) as count
+```
+6162,
 el resultado es correcto
 
 ## count `Airport`
@@ -81,4 +98,21 @@ MATCH (airline:Airline)
 RETURN count(airline)
 ```
 6162,
+el resultado es correcto
+
+## count `City`
+```neo4j
+MATCH (c:City)
+RETURN count(c)
+```
+6956,
+el resultado es correcto
+
+## count `Country`
+```neo4j
+MATCH (c:Country)
+RETURN count(c)
+```
+6093: ups
+317,
 el resultado es correcto
