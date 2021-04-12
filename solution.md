@@ -120,18 +120,6 @@ RETURN airport.name
 ```
 
 # 5) Si estamos en Barcelona, ¿con qué aerolíneas podemos ir a Londres de forma directa?
-Airport de Barcelona! 1er pas
-```neo4j
-MATCH (:City { name: "Barcelona" } ) <-[:MAIN_CITY]- (a:Airport)
-RETURN a
-```
-Airport de London! 2n pas, quina traició ir a "Londres", pero es "London"...
-```neo4j
-MATCH (a:Airport) -[:MAIN_CITY]-> (:City { name: "London" } )
-RETURN a
-```
-
-Final?
 ```neo4j
 MATCH (:City { name: "Barcelona" } ) <-[:MAIN_CITY]- (:Airport) -[r:ROUTE_TO]-> (:Airport) -[:MAIN_CITY]-> (:City { name: "London" } )
 RETURN r.airlineId
