@@ -197,3 +197,16 @@ MATCH path = shortestPath ( (:City { name: "Barcelona" } ) -[*]- (:City { name: 
 RETURN path
 ```
 La ruta más corta es: Barcelona -> 1218 -> 488 -> 499 -> Jersey
+
+# 12) ¿Cuantas rutas necesito hacer como mínimo para ir de Barcelona a Jersey, si queremos pasar primero por Montreal?
+Si consideramos ruta como viaje, con solo una ruta tendrás suficiente.
+
+# 13) De los distintos aeropuertos de Londres, ¿Cual es el que está más cerca del centro de Londres (Latitud: 51.5072, Longitud: -0.1275)?
+```neo4j
+MATCH (airport:Airport) -[:MAIN_CITY]-> (:City { name: "London" })
+WITH airport, point({longitude: toFloat(airport.longitude), latitude: toFloat(airport.latitude)}) AS airportPoint, point({longitude: -0.1275, latitude: toFloat("51.5072") }) AS londonCenter
+RETURN airport.name, distance(airportPoint, londonCenter) AS distance
+ORDER BY distance ASC
+LIMIT 1
+```
+El aeropuerto de Londres que más cerca esta del centro de la misma es London Heliport.
