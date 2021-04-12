@@ -153,3 +153,12 @@ MATCH (:City {name: "Santa Clara"} ) <-[:MAIN_CITY]- (:Airport) -[:ROUTE_TO*2]->
 RETURN count(c)
 ```
 Total de 1827 ciudades distintas haciendo 1 escala.
+
+# 8) Muestra el país que tenga más cantidad de aeropuertos
+```neo4j
+MATCH (airport:Airport) -[:MAIN_CITY]-> (:City) -[:IN]-> (country:Country)
+RETURN country.name, count(airport) AS count
+ORDER BY count DESC
+LIMIT 1
+```
+El país con más aeropuertos es United States.
