@@ -44,12 +44,9 @@ MERGE (airline:Airline { airlineId: line[0] })
 		airline.name = line[1],
 		airline.alias = line[2],
 		airline.callsign = line[5]
-MERGE (country:Country { name: line[4] })
+MERGE (country:Country { name: line[6] })
 CREATE (airline) -[:INCORPORATED_INTO]-> (country)
 ```
-
-
-
 
 # Part 2
 ## count `ROUTE_TO`
