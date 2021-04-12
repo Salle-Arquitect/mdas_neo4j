@@ -171,6 +171,8 @@ ORDER BY count DESC
 LIMIT 5
 ```
 Las 5 ciudades con más cantidad de rutas, incluyendo el resultado son:
+|#|city     |count  |
+|-|---------|-------|
 |1|London   |1230   |
 |2|Atlanta  |915    |
 |3|Paris    |724    |
