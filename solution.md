@@ -112,3 +112,9 @@ RETURN count(c)
 ```
 317,
 el resultado es correcto
+
+# 3) Muestra los nombres de los aeropuertos que hay en London
+```neo4j
+MATCH (a:Airport) -[:MAIN_CITY]-> (:City { name: "London" })
+RETURN a.name
+```
