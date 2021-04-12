@@ -178,3 +178,15 @@ Las 5 ciudades con más cantidad de rutas, incluyendo el resultado son:
 |3|Paris    |724    |
 |4|Chicago  |695    |
 |5|Shanghai |616    |
+
+# 10) Lista todos los aeropuertos que contengan la palabra International en su nombre
+```neo4j
+MATCH (airport:Airport)
+WHERE airport.name =~ '.*International.*'
+RETURN airport.name
+```
+Una breve muestra de los 897 que contienen la palabra International:
+- Sochi International Airport
+- Domodedovo International Airport
+- Belgorod International Airport
+- Heydar Aliyev International Airport
