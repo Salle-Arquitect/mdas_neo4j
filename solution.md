@@ -1,7 +1,7 @@
-# 1) Para poder trabajar con los datos en Neo4j, lo primero que debemos hacer es importar los datos.
-El orden es importante que de sigua el siguiente: routes.dat, airport.dat y TODO
-
 Nota: para eliminarlo todo: `MATCH (n) DETACH DELETE n`
+
+# 1) Para poder trabajar con los datos en Neo4j, lo primero que debemos hacer es importar los datos.
+El orden es importante que de sigua el siguiente: routes.dat, airport.dat y airline.dat
 
 ## routes.dat
 ```neo4j
