@@ -162,3 +162,17 @@ ORDER BY count DESC
 LIMIT 1
 ```
 El país con más aeropuertos es United States.
+
+# 9) Muestra las 5 ciudades origen con más cantidad de rutas, incluyendo la cantidad en el resultado
+```neo4j
+MATCH (:Airport) <-[r:ROUTE_TO]- (:Airport) -[:MAIN_CITY]-> (city:City)
+RETURN city.name, count(r) AS count
+ORDER BY count DESC
+LIMIT 5
+```
+Las 5 ciudades con más cantidad de rutas, incluyendo el resultado son:
+|1|London   |1230   |
+|2|Atlanta  |915    |
+|3|Paris    |724    |
+|4|Chicago  |695    |
+|5|Shanghai |616    |
