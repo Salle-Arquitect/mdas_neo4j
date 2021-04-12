@@ -128,6 +128,9 @@ RETURN airport.name
 - London Heliport
 - London Stansted Airport
 
+Sobre las aerolíneas que tienen rutas que pasan por el aeropuerto Barcelona International Airport, muestra su nombre y la cantidad de rutas que tienen que pasen por este aeropuerto. Ordena los resultados de mayor a menor cantidad de rutas.
+Sobre las aerolíneas que tienen rutas que pasan por el aeropuerto Barcelona International Airport, muestra el nombre y la cantidad de rutas que pasan por el aeropuerto Barcelona International Airport. Ordena los resultados de mayor a menor cantidad de rutas.
+
 # 5) Si estamos en Barcelona, ¿con qué aerolíneas podemos ir a Londres de forma directa?
 > Nota: Se tradujo Londres a London para tener resultados positivos
 ```neo4j
