@@ -118,6 +118,15 @@ el resultado es correcto
 MATCH (airport:Airport) -[:MAIN_CITY]-> (:City { name: "London" })
 RETURN airport.name
 ```
+- London City Airport
+- London Luton Airport
+- London Gatwick Airport
+- London Airport
+- Madison County Airport
+- London-Corbin Airport/Magee Field
+- London Heathrow Airport
+- London Heliport
+- London Stansted Airport
 
 # 5) Si estamos en Barcelona, ¿con qué aerolíneas podemos ir a Londres de forma directa?
 > Nota: Se tradujo Londres a London para tener resultados positivos
@@ -125,6 +134,18 @@ RETURN airport.name
 MATCH (:City { name: "Barcelona" } ) <-[:MAIN_CITY]- (:Airport) -[r:ROUTE_TO]-> (:Airport) -[:MAIN_CITY]-> (:City { name: "London" } )
 RETURN r.airlineId
 ```
+Con las siguientes aerolíneas podemos ir directos de Barcelona a Londres *London*:
+- 2439
+- 1355
+- 2822
+- 1355
+- 3737
+- 2297
+- 24
+- 2822
+- 2297
+- 220
+- 4296
 
 # 6) Desde Santa Clara, ¿a cuantas ciudades puedo ir haciendo 1 escala (= dos rutas)?
 ```neo4j
