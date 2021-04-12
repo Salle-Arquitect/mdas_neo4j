@@ -48,7 +48,7 @@ MERGE (country:Country { name: line[6] })
 CREATE (airline) -[:INCORPORATED_INTO]-> (country)
 ```
 
-# Part 2
+# 2) Antes de continuar verifica que se hayan importado bien los datos revisando las cantidades
 ## count `ROUTE_TO`
 ```neo4j
 MATCH ()-[r:ROUTE_TO]->()
@@ -110,6 +110,5 @@ el resultado es correcto
 MATCH (c:Country)
 RETURN count(c)
 ```
-6093: ups
 317,
 el resultado es correcto
