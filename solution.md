@@ -190,3 +190,10 @@ Una breve muestra de los 897 que contienen la palabra International:
 - Domodedovo International Airport
 - Belgorod International Airport
 - Heydar Aliyev International Airport
+
+# 11) Muestra la ruta más corta para ir de Barcelona a Jersey
+```neo4j
+MATCH path = shortestPath ( (:City { name: "Barcelona" } ) -[*]- (:City { name: "Jersey" } ))
+RETURN path
+```
+La ruta más corta es: Barcelona -> 1218 -> 488 -> 499 -> Jersey
